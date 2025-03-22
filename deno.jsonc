@@ -1,8 +1,10 @@
 {
+  "lock": false,
   "tasks": {
-    "dev": "deno run --watch main.ts"
+    "send": "deno run --env-file=.env.local --allow-env --allow-net send.ts",
+    "receive": "deno run --env-file=.env.local --allow-env --allow-net receive.ts"
   },
   "imports": {
-    "@std/assert": "jsr:@std/assert@1"
+    "@aws-sdk/client-sqs": "npm:@aws-sdk/client-sqs@^3.772.0"
   }
 }

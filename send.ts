@@ -16,7 +16,7 @@
 import { SQSClient, SendMessageCommand } from "@aws-sdk/client-sqs";
 
 // Read configuration from environment variables.
-const region = Deno.env.get("AWS_REGION") || "us-east-1";
+const region = Deno.env.get("AWS_REGION") || "us-east-2";
 const accessKeyId = Deno.env.get("AWS_ACCESS_KEY_ID");
 const secretAccessKey = Deno.env.get("AWS_SECRET_ACCESS_KEY");
 const queueUrl = Deno.env.get("SQS_QUEUE_URL");
@@ -41,6 +41,8 @@ const messageBody = "Hello from Deno v2 using ES2024 and Web APIs!";
 const command = new SendMessageCommand({
   QueueUrl: queueUrl,
   MessageBody: messageBody,
+  MessageGroupId: "default",
+  MessageDeduplicationId: crypto.randomUUID()
 });
 
 try {

@@ -18,11 +18,11 @@ irm https://deno.land/install.ps1 | iex
 
 Setup a `.env.local` you can use the `.env.example.local` file to help with the setup.
 
-Run the `send` and `recieve` script.
+Run the `send` and `receive` script.
 ```sh
 # Sending to AWS SQS
 deno task send
 
 # Recieving from AWS SQS
-deno task recieve
+deno task receive
 ```

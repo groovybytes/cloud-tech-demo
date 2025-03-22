@@ -1,8 +1,8 @@
 {
   "lock": false,
   "tasks": {
-    "send": "deno run --env-file=.env.local --allow-env --allow-net send.ts",
-    "receive": "deno run --env-file=.env.local --allow-env --allow-net receive.ts"
+    "send": "deno run --env-file=.env.local -RNSE send.ts",
+    "receive": "deno run --env-file=.env.local -RNSE receive.ts"
   },
   "imports": {
     "@aws-sdk/client-sqs": "npm:@aws-sdk/client-sqs@^3.772.0"
